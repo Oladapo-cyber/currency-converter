@@ -1,7 +1,7 @@
 const Header = () => {
   return (
-    <div>
-      <h1 className="container"></h1>
+    <div className="uppercase  font-kanit font-semibold text-3xl flex justify-center items-center">
+      Currency converter
     </div>
   );
 };

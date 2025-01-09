@@ -18,7 +18,7 @@ const Inputs = ({ amount, setAmount, setCurrency, currency }) => {
       <input
         className="border border-black w-[24rem] p-5 font-semibold text-black text-2xl rounded-lg"
         placeholder="0"
-        value={Number(amount).toFixed(3)}
+        value={amount === 0 ? "" : amount}
         onChange={(e) => setAmount(e.target.value)}
       />
 

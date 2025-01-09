@@ -18,15 +18,20 @@ const Inputs = ({ amount, setAmount, setCurrency, currency }) => {
       <input
         className="border border-black w-[24rem] p-5 font-semibold text-black text-2xl rounded-lg"
         placeholder="0"
-        value={amount}
+        value={Number(amount).toFixed(3)}
         onChange={(e) => setAmount(e.target.value)}
       />
 
       <select
         onChange={(e) => setCurrency(e.target.value)}
         value={currency}
-        className="absolute right-5 bg-transparent p-5 font-semibold text-black text-2xl rounded-lg"
+        className="absolute right-5 bg-transparent p-5 font-semibold text-black text-2xl rounded-lg uppercase"
       >
+        {currencyList.map((currency) => (
+          <option key={currency} value={currency}>
+            {currency}
+          </option>
+        ))}
         <option value="NGN">NGN</option>
         <option value="USD">USD</option>
       </select>

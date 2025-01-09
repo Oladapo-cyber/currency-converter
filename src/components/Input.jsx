@@ -32,8 +32,6 @@ const Inputs = ({ amount, setAmount, setCurrency, currency }) => {
             {currency}
           </option>
         ))}
-        <option value="NGN">NGN</option>
-        <option value="USD">USD</option>
       </select>
     </span>
   );

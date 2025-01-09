@@ -17,6 +17,15 @@ const Converter = () => {
     console.log(res.data[currency][convertedCurrency] * amount);
     setConvertedAmount(res.data[currency][convertedCurrency] * amount);
   };
+
+  const handleSwap = () => {
+    let tempCurrency = currency;
+    let tempAmount = amount;
+    setCurrency(convertedCurrency);
+    setConvertedCurrency(tempCurrency);
+    setAmount(convertedAmount);
+    setConvertedAmount(tempAmount);
+  };
   return (
     <div className="bg-white h-[20rem] flex flex-col gap-5 justify-center items-center rounded-xl">
       <div className="flex flex-col lg:flex-row justify-center items-center gap-5">
@@ -26,7 +35,10 @@ const Converter = () => {
           setAmount={setAmount}
           setCurrency={setCurrency}
         />
-        <CgArrowsExchangeAltV className="text-5xl text-black lg:rotate-90" />
+        <CgArrowsExchangeAltV
+          onClick={handleSwap}
+          className="text-5xl text-black lg:rotate-90"
+        />
         <Inputs
           amount={convertedAmount}
           setAmount={setConvertedAmount}
